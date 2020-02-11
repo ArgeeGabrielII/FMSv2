@@ -1,0 +1,5 @@
+C:\Users\Argee\Documents\FMS\FMSv2\FMS_WebService\WebServ_FMS_V2\FMSVS_DataAccess\bin\Debug\FMSVS_DataAccess.dll
+C:\Users\Argee\Documents\FMS\FMSv2\FMS_WebService\WebServ_FMS_V2\FMSVS_DataAccess\bin\Debug\FMSVS_DataAccess.pdb
+C:\Users\Argee\Documents\FMS\FMSv2\FMS_WebService\WebServ_FMS_V2\FMSVS_DataAccess\obj\Debug\FMSVS_DataAccess.dll
+C:\Users\Argee\Documents\FMS\FMSv2\FMS_WebService\WebServ_FMS_V2\FMSVS_DataAccess\obj\Debug\FMSVS_DataAccess.pdb
+C:\Users\Argee\Documents\FMS\FMSv2\FMS_WebService\WebServ_FMS_V2\FMSVS_DataAccess\obj\Debug\FMSVS_DataAccess.csprojResolveAssemblyReference.cache

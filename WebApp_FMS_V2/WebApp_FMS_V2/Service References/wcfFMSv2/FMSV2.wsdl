@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FMSV2" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:15346/FMSV2.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:15346/FMSV2.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFMSV2_Get_ViewAllRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ViewAllRequest" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_ViewAllRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ViewAllRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_DraftRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DraftRequests" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_DraftRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DraftRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Add_RequestHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Add_RequestHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_RequestHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForVerify_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForVerify" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForVerify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForAudit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForAudit" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForAudit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForClosing_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForClosing" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_RequestLines_ForClosing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_RequestLines_ForClosingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_GetUserPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPass" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_GetUserPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserAccessRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserAccessRights" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserAccessRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserAccessRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserAccount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserGroups" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_GroupRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_GroupRights" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_GroupRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_GroupRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_GroupRights_Requisition_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_GroupRights_Requisition" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_GroupRights_Requisition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_GroupRights_RequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Office_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Office" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Office_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_OfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Departments_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Departments" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Departments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_DepartmentApprover_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DepartmentApprover" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_DepartmentApprover_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DepartmentApproverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Supplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Supplier" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Supplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_SupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Currency_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Currency" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_Currency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_CurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PaymentMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaymentMode" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PaymentMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaymentModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PaymentTerm_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaymentTerm" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PaymentTerm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaymentTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_VesselDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_VesselDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_VesselDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_VesselDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_VesselType_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_VesselType" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_VesselType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_VesselTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_FlagRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_FlagRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_FlagRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_FlagRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PageModules_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PageModules" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_PageModules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PageModulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_RequestHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_RequestHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_RequestHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_UserAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_UserAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_UserAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_UserAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_UserGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_UserGroups" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_UserGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_UserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_GroupRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_GroupRights" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_GroupRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_GroupRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_GroupRights_Requisition_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_GroupRights_Requisition" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_GroupRights_Requisition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_GroupRights_RequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Department_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_Department" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Department_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_DepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Currency_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_Currency" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Currency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_CurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Supplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_Supplier" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Supplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_SupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_VesselDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_VesselDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_VesselDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_VesselDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_FlagRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_FlagRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_FlagRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_FlagRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Office_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_Office" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_Office_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_OfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PageModules_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PageModules" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PageModules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PageModulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PaymentMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PaymentMode" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PaymentMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PaymentModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PaymentTerms_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PaymentTerms" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_PaymentTerms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_PaymentTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_VesselType_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_VesselType" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_VesselType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_VesselTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Validate_Token_InputMessage">
+    <wsdl:part name="parameters" element="tns:Validate_Token" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Validate_Token_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Validate_TokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_TransactionLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_TransactionLogs" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Save_TransactionLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_TransactionLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Trails_UserTrails_InputMessage">
+    <wsdl:part name="parameters" element="tns:Trails_UserTrails" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Trails_UserTrails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Trails_UserTrailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserTrails_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserTrails" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_UserTrails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserTrailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_TransactionLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_TransactionLogs" />
+  </wsdl:message>
+  <wsdl:message name="IFMSV2_Get_TransactionLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_TransactionLogsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFMSV2">
+    <wsdl:operation name="Get_ViewAllRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_ViewAllRequest" message="tns:IFMSV2_Get_ViewAllRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_ViewAllRequestResponse" message="tns:IFMSV2_Get_ViewAllRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_DraftRequests" message="tns:IFMSV2_Get_DraftRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_DraftRequestsResponse" message="tns:IFMSV2_Get_DraftRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestHeader" message="tns:IFMSV2_Get_RequestHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestHeaderResponse" message="tns:IFMSV2_Get_RequestHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_RequestHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Add_RequestHeader" message="tns:IFMSV2_Add_RequestHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Add_RequestHeaderResponse" message="tns:IFMSV2_Add_RequestHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForVerify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForVerify" message="tns:IFMSV2_Get_RequestLines_ForVerify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForVerifyResponse" message="tns:IFMSV2_Get_RequestLines_ForVerify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForAudit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForAudit" message="tns:IFMSV2_Get_RequestLines_ForAudit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForAuditResponse" message="tns:IFMSV2_Get_RequestLines_ForAudit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForClosing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForClosing" message="tns:IFMSV2_Get_RequestLines_ForClosing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_RequestLines_ForClosingResponse" message="tns:IFMSV2_Get_RequestLines_ForClosing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/GetUserPass" message="tns:IFMSV2_GetUserPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/GetUserPassResponse" message="tns:IFMSV2_GetUserPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserAccessRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_UserAccessRights" message="tns:IFMSV2_Get_UserAccessRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_UserAccessRightsResponse" message="tns:IFMSV2_Get_UserAccessRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_UserAccount" message="tns:IFMSV2_Get_UserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_UserAccountResponse" message="tns:IFMSV2_Get_UserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_UserGroups" message="tns:IFMSV2_Get_UserGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_UserGroupsResponse" message="tns:IFMSV2_Get_UserGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_GroupRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_GroupRights" message="tns:IFMSV2_Get_GroupRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_GroupRightsResponse" message="tns:IFMSV2_Get_GroupRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_GroupRights_Requisition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_GroupRights_Requisition" message="tns:IFMSV2_Get_GroupRights_Requisition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_GroupRights_RequisitionResponse" message="tns:IFMSV2_Get_GroupRights_Requisition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Office">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_Office" message="tns:IFMSV2_Get_Office_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_OfficeResponse" message="tns:IFMSV2_Get_Office_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Departments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_Departments" message="tns:IFMSV2_Get_Departments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_DepartmentsResponse" message="tns:IFMSV2_Get_Departments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DepartmentApprover">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_DepartmentApprover" message="tns:IFMSV2_Get_DepartmentApprover_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_DepartmentApproverResponse" message="tns:IFMSV2_Get_DepartmentApprover_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_Supplier" message="tns:IFMSV2_Get_Supplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_SupplierResponse" message="tns:IFMSV2_Get_Supplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Currency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_Currency" message="tns:IFMSV2_Get_Currency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_CurrencyResponse" message="tns:IFMSV2_Get_Currency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaymentMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_PaymentMode" message="tns:IFMSV2_Get_PaymentMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_PaymentModeResponse" message="tns:IFMSV2_Get_PaymentMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaymentTerm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_PaymentTerm" message="tns:IFMSV2_Get_PaymentTerm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_PaymentTermResponse" message="tns:IFMSV2_Get_PaymentTerm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_VesselDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_VesselDepartment" message="tns:IFMSV2_Get_VesselDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_VesselDepartmentResponse" message="tns:IFMSV2_Get_VesselDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_VesselType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_VesselType" message="tns:IFMSV2_Get_VesselType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_VesselTypeResponse" message="tns:IFMSV2_Get_VesselType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_FlagRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_FlagRegistration" message="tns:IFMSV2_Get_FlagRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_FlagRegistrationResponse" message="tns:IFMSV2_Get_FlagRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_PageModules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_PageModules" message="tns:IFMSV2_Get_PageModules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_PageModulesResponse" message="tns:IFMSV2_Get_PageModules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_RequestHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_RequestHeader" message="tns:IFMSV2_Save_RequestHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_RequestHeaderResponse" message="tns:IFMSV2_Save_RequestHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_UserAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_UserAccounts" message="tns:IFMSV2_Save_UserAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_UserAccountsResponse" message="tns:IFMSV2_Save_UserAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_UserGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_UserGroups" message="tns:IFMSV2_Save_UserGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_UserGroupsResponse" message="tns:IFMSV2_Save_UserGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_GroupRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_GroupRights" message="tns:IFMSV2_Save_GroupRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_GroupRightsResponse" message="tns:IFMSV2_Save_GroupRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_GroupRights_Requisition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_GroupRights_Requisition" message="tns:IFMSV2_Save_GroupRights_Requisition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_GroupRights_RequisitionResponse" message="tns:IFMSV2_Save_GroupRights_Requisition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Department">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_Department" message="tns:IFMSV2_Save_Department_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_DepartmentResponse" message="tns:IFMSV2_Save_Department_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Currency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_Currency" message="tns:IFMSV2_Save_Currency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_CurrencyResponse" message="tns:IFMSV2_Save_Currency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Supplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_Supplier" message="tns:IFMSV2_Save_Supplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_SupplierResponse" message="tns:IFMSV2_Save_Supplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_VesselDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_VesselDepartment" message="tns:IFMSV2_Save_VesselDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_VesselDepartmentResponse" message="tns:IFMSV2_Save_VesselDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_FlagRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_FlagRegistration" message="tns:IFMSV2_Save_FlagRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_FlagRegistrationResponse" message="tns:IFMSV2_Save_FlagRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Office">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_Office" message="tns:IFMSV2_Save_Office_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_OfficeResponse" message="tns:IFMSV2_Save_Office_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_PageModules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_PageModules" message="tns:IFMSV2_Save_PageModules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_PageModulesResponse" message="tns:IFMSV2_Save_PageModules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_PaymentMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_PaymentMode" message="tns:IFMSV2_Save_PaymentMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_PaymentModeResponse" message="tns:IFMSV2_Save_PaymentMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_PaymentTerms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_PaymentTerms" message="tns:IFMSV2_Save_PaymentTerms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_PaymentTermsResponse" message="tns:IFMSV2_Save_PaymentTerms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_VesselType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_VesselType" message="tns:IFMSV2_Save_VesselType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_VesselTypeResponse" message="tns:IFMSV2_Save_VesselType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate_Token">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Validate_Token" message="tns:IFMSV2_Validate_Token_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Validate_TokenResponse" message="tns:IFMSV2_Validate_Token_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_TransactionLogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Save_TransactionLogs" message="tns:IFMSV2_Save_TransactionLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Save_TransactionLogsResponse" message="tns:IFMSV2_Save_TransactionLogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Trails_UserTrails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Trails_UserTrails" message="tns:IFMSV2_Trails_UserTrails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Trails_UserTrailsResponse" message="tns:IFMSV2_Trails_UserTrails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserTrails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_UserTrails" message="tns:IFMSV2_Get_UserTrails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_UserTrailsResponse" message="tns:IFMSV2_Get_UserTrails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_TransactionLogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFMSV2/Get_TransactionLogs" message="tns:IFMSV2_Get_TransactionLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFMSV2/Get_TransactionLogsResponse" message="tns:IFMSV2_Get_TransactionLogs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFMSV2" type="tns:IFMSV2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_ViewAllRequest">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_ViewAllRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftRequests">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_DraftRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestHeader">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_RequestHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_RequestHeader">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Add_RequestHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForVerify">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_RequestLines_ForVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForAudit">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_RequestLines_ForAudit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_RequestLines_ForClosing">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_RequestLines_ForClosing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPass">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/GetUserPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserAccessRights">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_UserAccessRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserAccount">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_UserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserGroups">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_UserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_GroupRights">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_GroupRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_GroupRights_Requisition">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_GroupRights_Requisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Office">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_Office" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Departments">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_Departments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DepartmentApprover">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_DepartmentApprover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_Supplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Currency">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_Currency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaymentMode">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_PaymentMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaymentTerm">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_PaymentTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_VesselDepartment">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_VesselDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_VesselType">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_VesselType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_FlagRegistration">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_FlagRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PageModules">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_PageModules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_RequestHeader">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_RequestHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_UserAccounts">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_UserAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_UserGroups">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_UserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_GroupRights">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_GroupRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_GroupRights_Requisition">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_GroupRights_Requisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Department">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_Department" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Currency">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_Currency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Supplier">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_Supplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_VesselDepartment">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_VesselDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_FlagRegistration">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_FlagRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Office">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_Office" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_PageModules">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_PageModules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_PaymentMode">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_PaymentMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_PaymentTerms">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_PaymentTerms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_VesselType">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_VesselType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate_Token">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Validate_Token" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_TransactionLogs">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Save_TransactionLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trails_UserTrails">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Trails_UserTrails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserTrails">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_UserTrails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_TransactionLogs">
+      <soap:operation soapAction="http://tempuri.org/IFMSV2/Get_TransactionLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FMSV2">
+    <wsdl:port name="BasicHttpBinding_IFMSV2" binding="tns:BasicHttpBinding_IFMSV2">
+      <soap:address location="http://localhost:15346/FMSV2.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
